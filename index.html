@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Learning Iterative Reasoning through Energy Minimization">
+    <meta name="author"
+          content="Yilun Du, Shuang Li, Joshua B. Tenenbaum, Igor Mordatch">
+
+    <title>Learning Iterative Reasoning through Energy Minimization</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>Learning Iterative Reasoning through Energy Minimization</h2>
+    <h3>ICML 2022</h3>
+    <hr>
+    <p class="authors">
+        <a href="https://yilundu.github.io">Yilun Du</a>,
+        <a href="https://people.csail.mit.edu/lishuang/"> Shuang Li</a>,
+        <a href="https://mitibmwatsonailab.mit.edu/people/joshua-tenenbaum/"> Joshua B. Tenenbaum</a>,
+        <a href="">Igor Mordatch</a>
+    </p>
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" href="">Paper</a>
+        <a class="btn btn-primary" href="https://github.com/yilundu/irem">Code</a>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="section">
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                    <source src="fig/teaser.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <br>
+
+        <p>
+        Deep learning has excelled on complex pattern recognition tasks such as image classification and object recognition. However, it 
+        struggles with tasks requiring nontrivial reasoning, such as algorithmic computation. Humans are able to solve such tasks through iterative reasoning 
+        -- spending more time to think about harder tasks. Most existing neural networks, however, exhibit a fixed computational budget controlled by the neural
+        network architecture, preventing additional computational processing on harder tasks. In this work, we present a new framework for iterative reasoning with neural networks.
+        We train a neural network to parameterize an energy landscape over all outputs, and implement each step of the iterative reasoning as an energy minimization
+        step to find a minimal energy solution. By formulating reasoning as an energy minimization problem, for harder problems that lead to more complex energy landscapes, 
+        we may then adjust our underlying computational budget by running a more complex optimization procedure. We empirically illustrate that our iterative reasoning approach can
+        solve more accurate and generalizable algorithmic reasoning tasks in both graph and continuous domains. Finally, we illustrate that our approach can recursively solve algorithmic problems 
+        requiring nested reasoning.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Reasoning through Energy Minimization</h2>
+        <hr>
+        <p>
+           Existing reasoning . However, there. Furthermore, its difficult to adapt the underlying computation to the task on hand
+        </p>
+
+    </div>
+
+    <div class="section">
+        <h2>Discrete Reasoning</h2>
+        <hr>
+        <p>
+         We further illustrate how our approach enables discrete reasoning.
+        </p>
+
+    </div>
+
+    <div class="section">
+        <h2>Continuous Reasoning </h2>
+        <hr>
+        <p>
+         Next, we illustrate how IREM enables us to reason on continuous domains.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>Recursive Reasoning</h2>
+        <hr>
+        <p>
+        We find that inferred energy functions from COMET can further <b>generalize</b> well. In the main paper, we illustrate how we may compose energy functions
+        across separate modes of data. Below, we illustrate how we can combine energy functions from one COMET model trained on one dataset with energy functions 
+        from another COMET model trained on a separate dataset.
+        </p>
+
+        <!---
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <video width="80%" playsinline="" autoplay="" loop="" preload="" muted="">
+                    <source src="fig/generalize.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        --->
+
+    </div>
+
+        <div class="section">
+            <h2>Related Projects</h2>
+            <hr>
+            <p>
+            Check out our related projects on energy based models! A full list can be found <a href="https://energy-based-model.github.io/">here</a>. <br>
+            </p>
+
+          <div class="row vspace-top">
+                <div class="col-sm-3">
+                    <img src="img/comet_teaser.gif" class="img-fluid" alt="comet" style="width:100%">
+                </div>
+
+                <div class="col-sm-9">
+                    <div class="paper-title">
+                        <a href="https://energy-based-model.github.io/comet/">Unsupervised Learning of Compositional Energy Concepts</a>
+                    </div>
+                    <div>
+                       We present a framework to decompose images into energy functions representing  both global factors
+                        of variation as well as local factors of variation. We show such decomposed components 
+                         generalize well, and are amenable to compositions across different modes of data, and can
+                        be further composed with separate energy functions discovered on other datasets.
+                    </div>
+                </div>
+          </div>
+
+            <div class='row vspace-top'>
+                <div class="col-sm-3">
+                    <img src='img/comp_cartoon.png' class='img-fluid'>
+                </div>
+
+                <div class="col">
+                    <div class='paper-title'>
+                        <a href="https://energy-based-model.github.io/compositional-generation-inference/">Compositional Visual Generation with Energy Based Models</a>
+                    </div>
+                    <div>
+                        We show how EBMs enable <b>zero-shot compositional</b> visual generation, enabling us to compose visual concepts
+                        (through operators of conjunction, disjunction, or negation) together in a zero-shot manner. 
+                        Our approach enables us to generate faces given a  description 
+                        ((Smiling AND Female) OR (NOT Smiling AND Male)) or to combine several different objects together.
+                    </div>
+                </div>
+            </div>
+
+            <div class='row vspace-top'>
+                <div class="col-sm-3">
+                    <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                        <source src="img/half.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="col">
+                    <div class='paper-title'>
+                        <a href="https://openai.com/blog/energy-based-models/">Implicit Generation and Generalization with Energy Based Models</a>
+
+                    </div>
+                    <div>
+                        We introduce a method to scale EBM training to modern neural network architectures.
+                        We show that such trained EBMs have a set of unique properties, enabling model robustness,
+                        image and trajectory modeling, continual learning and compositional visual generation.
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="section">
+                <h2>Paper</h2>
+                <hr>
+                <div>
+                    <div class="list-group">
+                        <a href=""
+                           class="list-group-item">
+                            <img src="img/paper_thumbnail.png"
+                                 style="width:100%; margin-right:-20px; margin-top:-10px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Bibtex</h2>
+                <hr>
+                <div class="bibtexsection">
+                    @inproceedings{du2022irem,
+                      title={Learning Iterative Reasoning through Energy Minimization},
+                      author={Du, Yilun and Li, Shuang and Tenenbaum, B. Joshua
+                      and Mordatch, Igor},
+                      booktitle={Proceedings of the 39th International Conference on Machine 
+                    Learning (ICML-22)},
+                      year={2022}
+                    }
+                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>Send feedback and questions to <a href="https://yilundu.github.io">Yilun Du</a></p>
+            </footer>
+        </div>
+
+</body>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</html>

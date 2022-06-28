@@ -20,6 +20,8 @@
 
 <style type="text/css">
 .move-up {margin-top:-1.4cm}
+.move-up-small {margin-top:-0.4cm}
+.move-up-more {margin-top:-0.7cm}
 </style>
 
 <body>
@@ -43,13 +45,17 @@
 
 <div class="container">
     <div class="section move-up">
-        <div class="row align-items-center justify-content-center text-center">
+        <div class="row align-items-center justify-content-center col text-left">
             <video width="80%" playsinline="" autoplay="" loop="" preload="" muted="">
                 <source src="img/video.mp4" type="video/mp4">
             </video>
+            <p>
+            <b>Reasoning as Energy Minimization:</b> We formulate reasoning as an optimization process on a learned energy landscape. Above, we illustrate intermediate optimized solutions as we compute the shortest path in a densely connected graph, compute the summation of two 20x20 input matrices, and denoise a noisy input image. 
+            </p>
         </div>
 
         <br>
+        <div class="move-up-small">
         <p>
         Deep learning has excelled on complex pattern recognition tasks such as image classification and object recognition. However, it 
         struggles with tasks requiring nontrivial reasoning, such as algorithmic computation. Humans are able to solve such tasks through iterative reasoning 
@@ -61,6 +67,7 @@
         solve more accurate and generalizable algorithmic reasoning tasks in both graph and continuous domains. Finally, we illustrate that our approach can recursively solve algorithmic problems 
         requiring nested reasoning.
         </p>
+        </div>
 
 
     </div>
@@ -94,11 +101,11 @@
         <hr>
         <p>
          First, we illustrate how IREM enables iterative reasoning on graphs. We consider graphical tasks such 
-         as shortest path and connected components computation. On the left, we illustrate the computation of  
+         as shortest path and connected components computation. On the <b>bottom left</b>, we illustrate the computation of  
          shortest path using IREM. As sequential optimization steps are run, IREM is able to gradually recover the 
          ground truth shortest path between start node (pictured in green) to a goal node (pictured in blue). 
-         We find that IREM is able to generalize discrete algorithmic computations to significantly
-         larger graphs at test time (performance on up size 30 graphs shown in the right plot), when only trained on up to size 10 graphs. 
+         On the <b>bottom right</b>, we find that IREM is able to generalize discrete algorithmic computations to significantly
+         larger graphs at test time (performance on up size 30 graphs is shown), when only trained on up to size 10 graphs. 
          IREM exhibits superior performance by utilizing more underlying algorithmic computation steps for more complex
          problems. In constrast, a recurrent approach is unable to extend algorithmic
          computation to large graphs, with increased iterative computation failing to improve final performance.
@@ -131,10 +138,13 @@
         </p>
 
         <div class="row align-items-center">
-            <div class="col justify-content-center text-center">
+            <div class="col justify-content-center text-left">
                 <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
                     <source src='img/continuous.mp4' type='video/mp4'>
                 </video>
+                <p>
+                <b>Matrix Addition:</b> Illustration of predicted solutions from IREM when adding Matrix A and B, both of size 20x20. As optimization is run, predictions (third column) converge to the correct answer, and the error map (fourth column), consisting of the L1 error of the predicted answer and ground truth answer, decreases to 0.
+                </p>
             </div>
         </div>
 
@@ -162,10 +172,21 @@
                 models must be able to generalize well to out-of-distribution intermediate computations. 
                 Compared to baselines, IREM generalizes substantially better to recursive algorithmic application,
                 exhibiting low computation error and sensible solutions even when up to 10 different matrices are
-                added (see qualitative examples in the PDF of the paper).
+                added (see example below on 4 input matrices).
 			</div>
             <div class="col-sm-4">
                 <img width="100%" src='img/recursive.png' class='img-fluid'>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-left">
+                <p>
+                <b>Qualitative Composition:</b> Illustration of predicted solutions from IREM when recursively adding four 20x20 matrices. First 9 entries of the predicted 20x20 matrix are shown. Predictions are close to ground truth answer.
+                </p>
+                <div class="move-up-more">
+                <img width="100%" src='img/recursive_qualitative.png' class='img-fluid'>
+                </div>
             </div>
         </div>
 
